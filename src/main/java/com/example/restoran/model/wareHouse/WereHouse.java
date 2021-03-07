@@ -1,25 +1,44 @@
 package com.example.restoran.model.wareHouse;
 
-import lombok.Builder;
-import lombok.ToString;
+import com.example.restoran.model.unitsEnum.CountProduct;
+import com.example.restoran.model.unitsEnum.Units;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 @ToString
 @Builder
 @Table(name = "were_house")
 public class WereHouse {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "name")
+
     private String name;
-    @Column(name = "count")
-    private int count;
-    @Column(name = "units")
-    private String units;
+
+    @OneToOne(mappedBy = "wereHouse", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private CountProduct countProducts;
+
+//    @OneToMany(mappedBy="wereHouse", orphanRemoval = true, fetch=FetchType.EAGER)
+//    private List<CountProduct> countProducts;
+
+    @OneToOne(mappedBy = "wereHouse", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Units units;
+
 
 }
