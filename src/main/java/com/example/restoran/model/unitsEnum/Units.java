@@ -25,12 +25,12 @@ public class Units {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "unitsName")
+    @Column(name = "units_name")
     private String unitsName;
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "wereHouse_id")
+    @JoinColumn(name = "were_house_id")
     @JsonIgnore
     private WereHouse wereHouse;
 

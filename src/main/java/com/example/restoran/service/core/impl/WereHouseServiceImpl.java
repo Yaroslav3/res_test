@@ -1,11 +1,10 @@
-package com.example.restoran.service.impl;
+package com.example.restoran.service.core.impl;
 
 import com.example.restoran.model.wareHouse.WereHouse;
 import com.example.restoran.repository.WereHouseRepository;
-import com.example.restoran.service.WereHouseService;
+import com.example.restoran.service.core.WereHouseService;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
 import java.util.List;
 
 @Service

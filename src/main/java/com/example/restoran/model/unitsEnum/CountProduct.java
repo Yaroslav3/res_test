@@ -1,19 +1,11 @@
 package com.example.restoran.model.unitsEnum;
-
 import com.example.restoran.model.wareHouse.WereHouse;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
-import java.util.List;
 
 
 @Entity
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
@@ -32,13 +24,24 @@ public class CountProduct {
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "wereHouse_id")
+    @JoinColumn(name = "were_house_id")
     @JsonIgnore
     private WereHouse wereHouse;
 
-//    @JsonIgnore
-//    @ManyToOne
-//    @JoinColumn(name="were_house_id", nullable=false)
-//    private WereHouse wereHouse;
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public WereHouse getWereHouse() {
+        return wereHouse;
+    }
+
+    public void setWereHouse(WereHouse wereHouse) {
+        this.wereHouse = wereHouse;
+    }
 }
