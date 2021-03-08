@@ -33,9 +33,6 @@ public class WereHouse {
     @PrimaryKeyJoinColumn
     private CountProduct countProducts;
 
-//    @OneToMany(mappedBy="wereHouse", orphanRemoval = true, fetch=FetchType.EAGER)
-//    private List<CountProduct> countProducts;
-
     @OneToOne(mappedBy = "wereHouse", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Units units;

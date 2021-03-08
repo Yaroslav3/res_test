@@ -1,11 +1,9 @@
-package com.example.restoran.service;
-
+package com.example.restoran.service.core;
 import com.example.restoran.model.wareHouse.WereHouse;
-
-import java.util.LinkedList;
 import java.util.List;
 
 public interface WereHouseService {
 
     List<WereHouse> getAllProducts();
+
 }
