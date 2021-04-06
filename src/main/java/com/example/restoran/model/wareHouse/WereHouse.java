@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
@@ -37,5 +35,31 @@ public class WereHouse {
     @PrimaryKeyJoinColumn
     private Units units;
 
+    public long getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public CountProduct getCountProducts() {
+        return countProducts;
+    }
+
+    public void setCountProducts(CountProduct countProducts) {
+        this.countProducts = countProducts;
+    }
+
+    public Units getUnits() {
+        return units;
+    }
+
+    public void setUnits(Units units) {
+        this.units = units;
+    }
 }
