@@ -47,7 +47,6 @@ public class ProductsController {
         return new ResponseEntity<>(productsPickUp, HttpStatus.OK);
 
     }
-
 }
 
 
